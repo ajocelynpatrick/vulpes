@@ -4,7 +4,9 @@ namespace vulpes
     : public TypeTraits
     {
         private:
-            Boolean is_primitive;
+            Boolean is_primitive_flag;
+            const PrimitiveType* primitive_type;
+            const Class* class_type;
 
         public:
             Type(const PrimitiveType& type);
