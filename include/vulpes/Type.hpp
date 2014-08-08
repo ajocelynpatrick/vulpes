@@ -5,13 +5,16 @@ namespace vulpes
     {
         private:
             Boolean is_primitive_flag;
-            const PrimitiveType* primitive_type;
-            const Class* class_type;
+            const PrimitiveType* const primitive_type;
+            const Class* const class_type;
 
         public:
             Type(const PrimitiveType& type);
             Type(const Class& type);
             Type(const Type& type);
+
+            const Class& get_class() const;
+            const PrimitiveType& get_primitive_type() const;
 
             Boolean is_abstract() const;
             Boolean is_primitive() const;

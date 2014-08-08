@@ -20,6 +20,30 @@ namespace vulpes
 
     }
 
+    const Class& Type::get_class() const
+    {
+        if(this->is_class())
+        {
+            return *this->class_type;
+        }
+        else
+        {
+            throw new std::logic_error("Trying to get class type of non class type!");
+        }
+    }
+
+    const PrimitiveType& Type::get_primitive_type() const
+    {
+        if(this->is_primitive())
+        {
+            return *this->primitive_type;
+        }
+        else
+        {
+            throw new std::logic_error("Trying to get primitive type of non primitive type!");
+        }
+    }
+
     Boolean Type::is_abstract() const
     {
         Boolean final = false;
